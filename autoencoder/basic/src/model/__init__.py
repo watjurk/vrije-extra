@@ -1,5 +1,6 @@
 import torch
 
+
 # Creating a PyTorch class
 # 28*28 ==> 9 ==> 28*28
 class AE(torch.nn.Module):
