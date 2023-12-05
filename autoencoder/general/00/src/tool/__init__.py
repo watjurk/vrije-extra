@@ -1,0 +1,1 @@
+from .pyplot import show_MNIST_digit
