@@ -13,9 +13,9 @@ dataloader = torch.utils.data.DataLoader(dataset, batch_size=32, shuffle=True)
 
 
 def train(model, epochs, device="cpu"):
-    # optimizer = torch.optim.Adam(model.parameters(), lr=1e-3, weight_decay=1e-8)
+    optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
+    # optimizer = torch.optim.SGD(model.parameters(), lr=1e-3)
 
-    optimizer = torch.optim.SGD(model.parameters(), lr=20)
     loss_function = torch.nn.MSELoss()
 
     for _ in tqdm(range(epochs), desc="Epochs", position=0):
