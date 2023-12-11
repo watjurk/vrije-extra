@@ -1,0 +1,20 @@
+program: sweep.py
+method: bayes
+name: test-sweep
+metric:
+  name: validation_loss
+  goal: minimize
+parameters:
+  batch_size:
+    values: [16, 32, 64, 128]
+  epochs:
+    values: [15, 20, 25, 30]
+  learning_rate:
+    min: 0.00001
+    max: 0.1
+  number_of_layers:
+    min: 2
+    max: 16
+  latent_space_size:
+    min: 2
+    max: 8
