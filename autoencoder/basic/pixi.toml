@@ -8,12 +8,13 @@ platforms = ["osx-arm64"]
 
 [tasks]
 start = "python ./src/main.py"
+jupyter = "jupyter notebook"
 
 [dependencies]
 pytorch = "2.1.1.*"
 torchvision = "0.16.1.*"
 torchaudio = "2.1.1.*"
-numpy = "1.26.2.*"
+numpy = ">=1.26.2,<1.27"
 python = "3.11.6.*"
 matplotlib = "3.8.2.*"
 ipykernel = "6.26.0.*"

@@ -1,11 +1,11 @@
-from typing import List
+from typing import List, Optional
 
 import torch
 import torch.nn as nn
 
 
 class MNISTAutoencoder(nn.Module):
-    def __init__(self, latent_space_size: int, number_of_layers: int):
+    def __init__(self, latent_space_size: int, number_of_layers: int, latent_space_activation_function: Optional[nn.Module]):
         super().__init__()
 
         self.input_size = 28 * 28
@@ -59,7 +59,8 @@ class MNISTAutoencoder(nn.Module):
             if not is_last_layer:
                 encoder_modules.append(nn.ReLU())
 
-        encoder_modules.append(nn.Sigmoid())
+        if latent_space_activation_function is not None:
+            encoder_modules.append(latent_space_activation_function)
 
         decoder_modules: List[nn.Module] = []
 
