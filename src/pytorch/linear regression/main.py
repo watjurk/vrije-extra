@@ -1,3 +1,7 @@
+# Disclaimer:
+# This is my implementation of LR, it 'works' but it's not a book-accurate version
+
+
 import torch
 import numpy as np
 import matplotlib.pyplot as plt

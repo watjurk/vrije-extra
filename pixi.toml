@@ -1,5 +1,5 @@
 [project]
-name = "autoencoder/basic"
+name = "wiktor-vrije-learn"
 version = "0.1.0"
 description = "Add a short description here"
 authors = ["Wiktor Jurkiewicz <watjurk@gmail.com>"]
@@ -7,21 +7,24 @@ channels = ["pytorch", "conda-forge"]
 platforms = ["osx-arm64"]
 
 [tasks]
-start = "python ./src/main.py"
-jupyter = "jupyter notebook"
+# Linear regression
+start_LR="python 'src/pytorch/linear regression/main.py'"
 
 [dependencies]
+python = "3.11.6.*"
+
+ipykernel = "6.26.0.*"
+jupyter = "1.0.0.*"
+ipywidgets = "8.1.1.*"
+
 pytorch = "2.1.1.*"
 torchvision = "0.16.1.*"
 torchaudio = "2.1.1.*"
+
 numpy = ">=1.26.2,<1.27"
-python = "3.11.6.*"
 matplotlib = "3.8.2.*"
-ipykernel = "6.26.0.*"
-ipywidgets = "8.1.1.*"
-jupyter = "1.0.0.*"
-fastprogress = "1.0.3.*"
 wandb = ">=0.16.1,<0.17"
+fastprogress = "1.0.3.*"
 
 [pypi-dependencies]
 torchsummary = "*"
